@@ -1,6 +1,6 @@
 <template>
   <div id="app"
-       class="container text-center">
+       class="container-fluid text-center">
     <router-view></router-view>
   </div>
 </template>
@@ -22,14 +22,24 @@ export default {
 </script>
 
 <style lang="scss">
+html, body {
+  background: none;
+  height: 100%;
+  background: #2c3e50;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
+  background: #fff;
 }
 
+.container-fluid {
+  max-width: 768px;
+}
 .nav {
   background: #efefef;
   margin-bottom: 20px;

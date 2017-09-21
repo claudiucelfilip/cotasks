@@ -31,6 +31,23 @@
                       v-model="form.description"
                       placeholder="Use only a small amount of water"></b-form-input>
       </b-form-group>
+      <b-form-group id="startDateGroup"
+                    label="Start Date:"
+                    label-for="startDate"
+                    description="Add start date for the task.">
+        <b-form-input id="startDate"
+                      type="date"
+                      v-model="form.startDate"></b-form-input>
+      </b-form-group>
+      <b-form-group id="colorGroup"
+                    label="Color:"
+                    description="Add a color for the task.">
+        <b-button v-for="(color, index) in colors"
+                  :key="index"
+                  class="color"
+                  :style="{background: color}"
+                  @click="setColor(color)"></b-button>
+      </b-form-group>
       <b-form-group id="frequencyGroup"
                     label="Frequency:"
                     label-for="frequency"
@@ -51,20 +68,30 @@
 </template>
 
 <script>
-// import Task from '@/models/Task'
-// import { connect } from 'vue-mobx'
+import Tasks from '@/services/Tasks'
+import moment from 'moment'
 
 export default {
   name: 'AddTask',
   data () {
+    let colors = [
+      '#ff6159',
+      '#86c53e',
+      '#16a6f8',
+      '#72c2a1',
+      '#f4b401',
+      '#5e6fd1'
+    ]
     return {
+      colors,
       form: {
         name: '',
         description: '',
-        frequency: null
+        frequency: 1,
+        startDate: new Date(),
+        color: colors[0]
       },
       frequencies: [
-        { text: 'Select One', value: null },
         { text: 'Daily', value: 1 },
         { text: 'Every 2 days', value: 2 },
         { text: 'Every 3 days', value: 3 },
@@ -79,10 +106,22 @@ export default {
   },
   methods: {
     onSubmit (evt) {
-      // let task = new Task(this.form)
-      // task.save()
+      Tasks.add(this.form).then(() => {
+        this.$router.push({ name: 'Main' })
+      })
+      evt.preventDefault()
+    },
+    setColor (color) {
+      this.form.color = color
     }
   }
 }
 
 </script>
+<style lang="scss" scoped>
+.color {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+</style>
