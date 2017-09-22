@@ -2,7 +2,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import 'rxjs/add/operator/skip'
 import * as axios from 'axios'
 
-const API_URL = 'http://localhost:3000/tasks'
+const API_URL = process.env.API_URL || 'http://localhost:3000/tasks'
 class Tasks {
   constructor () {
     this._tasks = new BehaviorSubject([])
@@ -45,7 +45,7 @@ class Tasks {
       }
       return true
     })])
-    
+
     return axios.delete(`${API_URL}/${taskId}`)
   }
 
