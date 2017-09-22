@@ -61,13 +61,13 @@ export default {
   border: none;
 
   .icon {
-    opacity: 0;
+    display: none
   }
 
   &.done {
     opacity: 0.5;
     .icon {
-      opacity: 1;
+      display: inline-block
     }
   }
 }
