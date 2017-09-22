@@ -4,6 +4,9 @@
   "description": "A Vue.js project",
   "author": "Claudiu Teodor Filip <cfilip@opswat.com>",
   "private": true,
+  "engines": {
+    "node": "8.1.2"
+  },
   "scripts": {
     "dev": "node builder/dev-server.js",
     "start": "node builder/dev-server.js",
