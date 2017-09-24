@@ -60,16 +60,15 @@ export default {
 <style lang="scss">
 .blurred-image {
   position: absolute;
-  z-index: -1;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
   background-repeat: no-repeat;
   background-size: cover; 
   min-width: 110%;
   min-height: 110%;
   filter: blur(15px);
-  opacity: 0.7;
+  opacity: 0.5;
 }
 .card-img-top {
   height: 150px;

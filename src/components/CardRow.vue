@@ -50,7 +50,6 @@ export default {
         left: event.touches[0].pageX,
         top: event.touches[0].pageY
       }
-      event.preventDefault()
     },
     onTouchMove (event, day) {
       let left = event.touches[0].pageX
@@ -62,7 +61,10 @@ export default {
         .map((item) => {
           item.pos.left += diff
         })
-      event.preventDefault()
+
+      if (Math.abs(this.startPos.top - event.touches[0].pageY) < 10) {
+        event.preventDefault()
+      }
     },
     onTouchEnd (event, day) {
       day.touched = false
@@ -102,6 +104,7 @@ export default {
   height: 100%;
   background: #000;
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
 
   .card-wrapper {
     position: absolute;
