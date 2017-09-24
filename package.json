@@ -9,7 +9,7 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "dev": "node builder/dev-server.js",
+    "dev": "cross-env API_URL=http://localhost:3000 node builder/dev-server.js",
     "start": "node builder/dev-server.js",
     "web": "npm start",
     "build": "node builder/build.js",

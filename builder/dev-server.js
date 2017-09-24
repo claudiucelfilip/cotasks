@@ -8,6 +8,7 @@ if (!process.env.NODE_ENV) {
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
+var axios = require('axios')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = (process.env.NODE_ENV === 'testing' || process.env.NODE_ENV === 'production')
@@ -83,6 +84,16 @@ devMiddleware.waitUntilValid(() => {
 })
 
 var server = app.listen(port)
+
+setInterval(() => {
+  console.log('keepalive request', process.env.API_URL)
+  axios.get(process.env.API_URL + '/utils/keepalive')
+  .then((response) => {
+    console.log('keepalive response', response.data)
+  }, (err) => {
+    console.log('keepalive error', err)
+  })
+}, 10000)
 
 module.exports = {
   ready: readyPromise,
