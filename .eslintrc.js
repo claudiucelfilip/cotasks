@@ -22,7 +22,8 @@ module.exports = {
   'rules': {
     // allow paren-less arrow functions
     'arrow-parens': 0,
-    'no-trailing-spaces': 0,
+    'semi': 1,
+    'no-trailing-spaces': 1,
     'no-unused-vars': 1,
     // allow async-await
     'generator-star-spacing': 0,

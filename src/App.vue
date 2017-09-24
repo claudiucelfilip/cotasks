@@ -33,15 +33,17 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100%;
+  min-height: 100%;
   background: #fff;
+  overflow: hidden;
+
 }
 
 .container-fluid {
   max-width: 768px;
 }
 .nav {
-  background: #efefef;
+  background: rgba(255,255,255,0.8);
   margin-bottom: 20px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;

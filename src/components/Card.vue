@@ -1,22 +1,24 @@
 <template>
-  <b-card :title="title"
-          :img-src="`https://lorempixel.com/600/300/nature/${Math.floor(Math.random() * 9) + 1}`"
-          img-alt="Image"
-          img-top
-          tag="article"
-          :class="{'is-today': isToday}">
-    <h5 class="margin-bottom--30">{{subtitle}}</h5>
-
-    <b-button v-for="task in todaysTasks"
-              :key="task.value._id"
-              class="task"
-              :class="{'done': task.value.done}"
-              @click="setDone(task)"
-              :style="{background: task.value.color}">
-              <span class="icon icon-check-circle float-left"></span>
-              {{task.value.name}}
-    </b-button>
-  </b-card>
+  <div class="card-wrapper">
+    <div class="blurred-image"
+         :style="{backgroundImage: `url(${imageSrc})`}"></div>
+    <b-card :title="title"
+            :img-src="imageSrc"
+            img-alt="Image"
+            img-top
+            :class="{'is-today': isToday}">
+      <h5 class="margin-bottom--30">{{subtitle}}</h5>
+      <b-button v-for="task in todaysTasks"
+                :key="task.value._id"
+                class="task"
+                :class="{'done': task.value.done}"
+                @click="setDone(task)"
+                :style="{background: task.value.color}">
+        <span class="icon icon-check-circle float-left"></span>
+        {{task.value.name}}
+      </b-button>
+    </b-card>
+  </div>
 </template>
 
 <script>
@@ -32,7 +34,8 @@ export default {
     return {
       title: this.date.format('dddd'),
       subtitle: this.date.format('Do MMMM'),
-      isToday: this.date.isSame(new Date(), 'day')
+      isToday: this.date.isSame(new Date(), 'day'),
+      imageSrc: `https://lorempixel.com/600/600/nature/${Math.floor(Math.random() * 8) + 1}`
     }
   },
   computed: {
@@ -55,6 +58,23 @@ export default {
 </script>
 
 <style lang="scss">
+.blurred-image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  min-width: 110%;
+  min-height: 110%;
+  filter: blur(15px);
+  opacity: 0.7;
+}
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
 .task {
   width: 100%;
   margin-bottom: 10px;

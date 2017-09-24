@@ -18,17 +18,17 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '@/scss/main.scss'
 import '@/assets/icons/icomoon/style.css'
 
-// Vue.use(VueRx, {
-  // Observable
-  // BehaviorSubject,
-  // Subscription,
-  // Subject
-// })
-
-Vue.use(VueMobx, {
-  toJS,
-  isObservable
+Vue.use(VueRx, {
+  Observable,
+  BehaviorSubject,
+  Subscription,
+  Subject
 })
+
+// Vue.use(VueMobx, {
+//   toJS,
+//   isObservable
+// })
 
 Vue.use(BootstrapVue)
 Vue.use(VueForm)

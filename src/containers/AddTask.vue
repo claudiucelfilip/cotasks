@@ -1,5 +1,5 @@
 <template>
-  <div class="text-left">
+  <div class="text-left add-task">
     <b-nav>
       <b-nav-item>
         <router-link :to="{name: 'Main'}">
@@ -123,5 +123,8 @@ export default {
   width: 30px;
   height: 30px;
   margin-right: 10px;
+}
+.add-task {
+  background: #fff;
 }
 </style>
