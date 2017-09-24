@@ -62,13 +62,15 @@ export default {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate3d(-50%, 0, 0);
   background-repeat: no-repeat;
   background-size: cover; 
   min-width: 110%;
   min-height: 110%;
   filter: blur(15px);
   opacity: 0.5;
+}
+.card {
+  position: relative;
 }
 .card-img-top {
   height: 150px;

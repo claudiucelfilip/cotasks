@@ -84,7 +84,6 @@ export default {
         .map((item) => {
           item.pos.left = Math.floor(diff)
         })
-      event.preventDefault()
     }
   },
   components: {
@@ -114,7 +113,7 @@ export default {
     height: 100%;
     padding: 15px;
     flex-shrink: 0;
-    transition: all 0.05s ease-out;
+    transition: all 0.1s ease-out;
     padding: 80px 30px 30px;
 
     .card {
@@ -122,19 +121,12 @@ export default {
       overflow: auto;
       box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.2);
       max-height: 100%;
+      z-index: 5;
     }
 
-    &.touched {
-      transition: none;
-      transition: box-shadow 0.2s ease-out;
-
-      box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.15);
-    }
-
-    &.is-today {
+    .card.is-today {
       opacity: 1;
       pointer-events: all;
-      border: solid 4px #1f538f;
       z-index: 10;
     }
   }
