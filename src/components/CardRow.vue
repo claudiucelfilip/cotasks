@@ -50,6 +50,7 @@ export default {
         left: event.touches[0].pageX,
         top: event.touches[0].pageY
       }
+      event.preventDefault()
     },
     onTouchMove (event, day) {
       let left = event.touches[0].pageX
@@ -61,6 +62,7 @@ export default {
         .map((item) => {
           item.pos.left += diff
         })
+      event.preventDefault()
     },
     onTouchEnd (event, day) {
       day.touched = false
@@ -68,7 +70,7 @@ export default {
       let diff = day.pos.left / window.innerWidth;
       diff = this.direction < 0 ? Math.floor(diff) : Math.ceil(diff)
       diff *= window.innerWidth
-      
+
       if (diff > 0) {
         diff = 0
       }
@@ -80,6 +82,7 @@ export default {
         .map((item) => {
           item.pos.left = diff
         })
+      event.preventDefault()
     }
   },
   components: {
@@ -109,7 +112,7 @@ export default {
     padding: 15px;
     flex-shrink: 0;
     transition: all 0.05s ease-out;
-    padding: 80px 30px 30px; 
+    padding: 80px 30px 30px;
 
     .card {
       border-radius: 7px;
@@ -121,7 +124,7 @@ export default {
     &.touched {
       transition: none;
       transition: box-shadow 0.2s ease-out;
-      
+
       box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.15);
     }
 
@@ -130,7 +133,6 @@ export default {
       pointer-events: all;
       border: solid 4px #1f538f;
       z-index: 10;
-      
     }
   }
 }
