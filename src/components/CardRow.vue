@@ -59,7 +59,7 @@ export default {
 
       this.daysWithPos
         .map((item) => {
-          item.pos.left += diff
+          item.pos.left += Math.floor(diff)
         })
 
       if (Math.abs(this.startPos.top - event.touches[0].pageY) < 10) {
@@ -82,7 +82,7 @@ export default {
       }
       this.daysWithPos
         .map((item) => {
-          item.pos.left = diff
+          item.pos.left = Math.floor(diff)
         })
       event.preventDefault()
     }
