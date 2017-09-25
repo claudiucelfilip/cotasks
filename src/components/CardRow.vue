@@ -113,7 +113,7 @@ export default {
     height: 100%;
     padding: 15px;
     flex-shrink: 0;
-    transition: all 0.1s ease-out;
+    transition: all 0.2s ease-out;
     padding: 80px 30px 30px;
 
     .card {
@@ -122,6 +122,10 @@ export default {
       box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.2);
       max-height: 100%;
       z-index: 5;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
     }
 
     .card.is-today {

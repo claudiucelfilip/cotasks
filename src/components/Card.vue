@@ -1,12 +1,12 @@
 <template>
-  <div class="card-wrapper">
+  <div class="card-wrapper"
+       :class="{'is-today': isToday}">
     <div class="blurred-image"
          :style="{backgroundImage: `url(${imageSrc})`}"></div>
     <b-card :title="title"
             :img-src="imageSrc"
             img-alt="Image"
-            img-top
-            :class="{'is-today': isToday}">
+            img-top>
       <h5 class="margin-bottom--30">{{subtitle}}</h5>
       <b-button v-for="task in todaysTasks"
                 :key="task.value._id"
@@ -26,6 +26,7 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/observable/from'
 import moment from 'moment'
+import Backdrops from '@/services/Backdrops'
 
 export default {
   name: 'card',
@@ -35,7 +36,7 @@ export default {
       title: this.date.format('dddd'),
       subtitle: this.date.format('Do MMMM'),
       isToday: this.date.isSame(new Date(), 'day'),
-      imageSrc: `https://lorempixel.com/600/600/nature/${Math.floor(Math.random() * 8) + 1}`
+      imageSrc: Backdrops.getImageSrc(this.date.format('D'))
     }
   },
   computed: {
@@ -63,19 +64,51 @@ export default {
   top: 0;
   left: 50%;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   min-width: 110%;
   min-height: 110%;
+  transform: translateX(-50%);
   filter: blur(15px);
-  opacity: 0.5;
+  opacity: 0.4;
 }
+
+.card-wrapper {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #000;
+    box-shadow: 0 10px 100px 50px rgba(0,0,0,0.9);
+    z-index: 10;
+  }
+  &.is-today {
+    &:after {
+      display: none;
+    }
+    .blurred-image {
+      opacity: 0.8;
+    }
+    .card {
+      opacity: 0.8;
+    }
+  }
+}
+
+
 .card {
+  opacity: 0.4;
   position: relative;
 }
+
 .card-img-top {
   height: 150px;
   object-fit: cover;
 }
+
 .task {
   width: 100%;
   margin-bottom: 10px;
