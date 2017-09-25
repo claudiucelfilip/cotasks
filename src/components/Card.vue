@@ -109,7 +109,7 @@ export default {
   object-fit: cover;
 }
 
-.task {
+.task.task {
   width: 100%;
   margin-bottom: 10px;
   border: none;
