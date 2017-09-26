@@ -1,1 +1,18 @@
 @import 'base/utils';
+
+.btn-round {
+  border-radius: 100%;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+}
+
+.popin {
+  transition: all 0.3s ease;
+
+  &.popin-closed {
+    transform: scale(0.7);
+    opacity: 0 !important;
+  }
+}

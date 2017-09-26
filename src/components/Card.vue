@@ -6,9 +6,11 @@
     <b-card :title="title"
             :img-src="imageSrc"
             img-alt="Image"
+            v-popin
             img-top>
-      <h5 class="margin-bottom--30">{{subtitle}}</h5>
-      <b-button v-for="task in todaysTasks"
+      <p class="subtitle">{{subtitle}}</p>
+      <b-button v-for="(task, index) in todaysTasks"
+                v-popin="(index+1) * 100"
                 :key="task.value._id"
                 class="task"
                 :class="{'done': task.value.done}"
@@ -65,8 +67,8 @@ export default {
   left: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 110%;
-  min-height: 110%;
+  min-width: 105%;
+  min-height: 105%;
   transform: translateX(-50%);
   filter: blur(15px);
   opacity: 0.4;
@@ -102,6 +104,14 @@ export default {
 .card {
   opacity: 0.4;
   position: relative;
+
+  .card-title {
+    font-size: 32px;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    opacity: 0.8;
+  }
 }
 
 .card-img-top {
@@ -113,6 +123,9 @@ export default {
   width: 100%;
   margin-bottom: 10px;
   border: none;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 20px;
 
   .icon {
     display: none

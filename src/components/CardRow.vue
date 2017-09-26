@@ -17,6 +17,7 @@
 import Card from './Card'
 import { Subject } from 'rxjs/Subject'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { Popin } from '@/directives/Popin'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/startWith'
 import 'rxjs/add/operator/scan'
