@@ -7,18 +7,18 @@
 
 <script>
 import { observable } from 'mobx'
-import Notifications from '@/services/Notifications'
+// import Notifications from '@/services/Notifications'
 
 export default {
   name: 'app',
   data () {
-    let notifications = new Notifications();
+    // let notifications = new Notifications();
 
-    setTimeout(() => {
-      notifications.createNotification('Hey there', {
-        body: 'This is a notifiaction yo!'
-      })
-    }, 1000)
+    // setTimeout(() => {
+    //   notifications.createNotification('Hey there', {
+    //     body: 'This is a notifiaction yo!'
+    //   })
+    // }, 1000)
     let appState = observable({
       tasks: []
     })
