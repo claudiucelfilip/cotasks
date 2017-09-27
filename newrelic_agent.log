@@ -1,0 +1,8 @@
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30455,"time":"2017-09-27T16:22:16.419Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.1.3."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30455,"time":"2017-09-27T16:22:17.891Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30455,"time":"2017-09-27T16:22:20.518Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1753348/applications/72931857","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30455,"time":"2017-09-27T16:22:20.519Z","msg":"Connected to collector-218.newrelic.com:443 with agent run ID 313241933577778816.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30536,"time":"2017-09-27T16:24:26.388Z","msg":"Using New Relic for Node.js. Agent version: 2.2.1; Node version: v8.1.3."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30536,"time":"2017-09-27T16:24:26.799Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30536,"time":"2017-09-27T16:24:29.320Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1753348/applications/72931857","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Claudius-MacBook-Pro-2.local","pid":30536,"time":"2017-09-27T16:24:29.320Z","msg":"Connected to collector-218.newrelic.com:443 with agent run ID 313241933577790063.","component":"collector_api"}
