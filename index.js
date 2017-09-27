@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve('dist/index.html'));
 });
 
+
 app.listen(PORT, () => {
   console.log('Listening to', PORT);
 });
