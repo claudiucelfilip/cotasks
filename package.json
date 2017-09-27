@@ -10,8 +10,7 @@
   },
   "scripts": {
     "dev": "cross-env API_URL=http://localhost:3000 node builder/dev-server.js",
-    "start": "node index.js",
-    "web": "npm run build && node index.js",
+    "start": "npm run build && node index.js",
     "build": "node builder/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
