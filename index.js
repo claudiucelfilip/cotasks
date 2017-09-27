@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => {
   // ejs render automatically looks in the views folder
-  res.sendFile('index.html');
+  res.sendFile(path.resolve('index.html'));
 });
 
 app.listen(PORT, () => {
