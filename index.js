@@ -4,13 +4,12 @@ const path = require('path');
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-app.set('view engine', require('ejs').renderFile);
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => {
   // ejs render automatically looks in the views folder
-  res.render('dist/index.html');
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 app.listen(PORT, () => {
